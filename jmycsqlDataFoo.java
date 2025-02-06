@@ -16,7 +16,6 @@ public class jmycsqlDataFoo extends jmycsqlCommands
             {
                 String lastNamePart = part.split("=")[1].trim();
                 lastNamePart = lastNamePart.replace("'", "");
-                System.out.println(lastNamePart);
                 return lastNamePart;
             }
         }
