@@ -20,7 +20,7 @@ public class jmycsqlDataFoo extends jmycsqlCommands
             }
         }
 
-        return null;
+        return "-1";
     } 
 
 

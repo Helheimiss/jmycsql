@@ -38,7 +38,7 @@ public class jmycsql extends jmycsqlDataFoo
         int id = Integer.parseInt(processString(argv, "'id'"));
         String lastName = processString(argv, "'lastName'");
         int age = Integer.parseInt(processString(argv, "'age'"));
-        Double cost = 0d;
+        Double cost = Double.parseDouble(processString(argv, "'cost'"));
         Boolean active = Boolean.parseBoolean(processString(argv, "'active'"));
 
         data.add(createRow
