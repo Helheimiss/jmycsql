@@ -59,20 +59,23 @@ public class jmycsql extends jmycsqlDataFoo
     }
 
 
-    private void DELETE(String argv) // удаление элемента из коллекции
+    private void DELETE(String argv) throws Exception // удаление элемента из коллекции
     {
         //TODO
     }
 
 
-    private void SELECT(String argv) // поиск элементов в коллекции
+    private void SELECT(String argv) throws Exception // поиск элементов в коллекции
     {
         //TODO
     }
 
 
-    private void WHERE(String argv) //
+    private void WHERE(String argv) throws Exception //
     {
-        //TODO
+        if (!argv.contains(" where "))
+        {
+            throw new Exception("error in WHERE{ UPDATE, DELETE, SELECT }");
+        }
     }
 }

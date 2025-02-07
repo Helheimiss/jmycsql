@@ -20,15 +20,16 @@ public class jmycsqlDataFoo extends jmycsqlCommands
 
     protected Object getObjectFromText(String input, String field)
     {
-        field += "=";
+        // field += "=";
         int startAt = input.indexOf(field);
         int endTo = startAt;
 
+        
         int i = startAt;
-        input += ",";
+        input += '\0';
         try 
         {            
-            while (input.toCharArray()[i] != ',')
+            while (input.toCharArray()[i] != ',' && input.toCharArray()[i] != '\0')
             {
                 endTo++;
                 i++;
@@ -39,8 +40,8 @@ public class jmycsqlDataFoo extends jmycsqlCommands
             return null;
         }
 
-        String newInputText = input.substring(startAt, endTo);
 
+        String newInputText = input.substring(startAt, endTo);
         for (String f : fields) 
         {
             newInputText = newInputText.replace(f, "");
