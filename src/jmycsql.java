@@ -35,7 +35,21 @@ public class jmycsql extends jmycsqlDataFoo
 
     private void INSERT(String argv) // вставка элемента в коллекцию
     {
-        //TODO
+        argv = textTransform(argv);
+        Object id = getObjectFromText(argv, fields[0]);
+        Object lastName = getObjectFromText(argv, fields[1]);
+        Object age = getObjectFromText(argv, fields[2]);
+        Object cost = getObjectFromText(argv, fields[3]);
+        Object active = getObjectFromText(argv, fields[4]);
+
+        data.add(createRow
+        (
+            id, 
+            lastName, 
+            age, 
+            cost, 
+            active
+        ));
     }
 
 
