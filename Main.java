@@ -7,12 +7,14 @@ public class Main
         jmycsql jmycsql = new jmycsql();
         Scanner sc = new Scanner(System.in);
         
-        jmycsql.commandExec(sc.nextLine());
+        // jmycsql.commandExec(sc.nextLine());
 
-        System.out.println(jmycsql.data.get(0));
+        // System.out.println(jmycsql.data.get(0));
 
-
-        // String text = "INSERT VALUES 'lastName'='Федоров' , 'id'=3, 'age'=40, 'active'=true";
-        // System.out.println(jmycsql.processString(text, "'lastName'"));
+        String sql1 = "UPDATE VALUES 'active'=true  where 'Name'='pety'";
+        String sql2 = "UPDATE VALUES 'active'=false, 'cost'=10.1 where 'id'=3";
+        
+        System.out.println(jmycsql.WHERE(sql1));
     }
+
 }

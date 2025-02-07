@@ -27,7 +27,7 @@ public class jmycsql extends jmycsqlDataFoo
         }
         else
         {
-            throw new Exception("error");
+            throw new Exception("error in commandExec");
         }
 
     }
@@ -35,11 +35,11 @@ public class jmycsql extends jmycsqlDataFoo
 
     private void INSERT(String argv) // вставка элемента в коллекцию
     {
-        int id = Integer.parseInt(processString(argv, "'id'"));
-        String lastName = processString(argv, "'lastName'");
-        int age = Integer.parseInt(processString(argv, "'age'"));
-        Double cost = Double.parseDouble(processString(argv, "'cost'"));
-        Boolean active = Boolean.parseBoolean(processString(argv, "'active'"));
+        Object id = processString(argv, "'id'");
+        Object lastName = processString(argv, "'lastName'");
+        Object age = processString(argv, "'age'");
+        Object cost = processString(argv, "'cost'");
+        Object active = processString(argv, "'active'");
 
         data.add(createRow
         (
@@ -67,5 +67,28 @@ public class jmycsql extends jmycsqlDataFoo
     private void SELECT(String argv) // поиск элементов в коллекции
     {
         //TODO
+    }
+
+
+    public Object WHERE(String argv) throws Exception
+    {
+        argv = argv.replaceAll("\\s*=\\s*", "=");
+        argv = argv.replaceAll("\\s*,\\s*", ",");
+
+        if (!argv.contains(" where '")) 
+        {
+            throw new Exception("error in WHERE");
+        }
+        
+
+        String sqlLower = argv.toLowerCase();
+        int whereIndex = sqlLower.indexOf("where");
+        
+        if (whereIndex != -1) 
+        {
+            return argv.substring(whereIndex + 5).trim();
+        }
+        
+        return null;
     }
 }

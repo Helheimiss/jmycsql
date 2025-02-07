@@ -20,11 +20,11 @@ public class jmycsqlDataFoo extends jmycsqlCommands
             }
         }
 
-        return "0";
+        return null;
     } 
 
 
-   protected Map<String, Object> createRow(int id, String lastName, int age, double cost, boolean active) 
+   protected Map<String, Object> createRow(Object id, Object lastName, Object age, Object cost, Object active) 
    {
        Map<String, Object> row = new HashMap<>();
        row.put("id", id);
