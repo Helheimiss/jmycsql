@@ -35,20 +35,7 @@ public class jmycsql extends jmycsqlDataFoo
 
     private void INSERT(String argv) // вставка элемента в коллекцию
     {
-        Object id = processString(argv, "'id'");
-        Object lastName = processString(argv, "'lastName'");
-        Object age = processString(argv, "'age'");
-        Object cost = processString(argv, "'cost'");
-        Object active = processString(argv, "'active'");
-
-        data.add(createRow
-        (
-            id, 
-            lastName, 
-            age, 
-            cost, 
-            active
-        ));
+        //TODO
     }
 
 
@@ -67,28 +54,5 @@ public class jmycsql extends jmycsqlDataFoo
     private void SELECT(String argv) // поиск элементов в коллекции
     {
         //TODO
-    }
-
-
-    public String WHERE(String argv) throws Exception
-    {
-        if (!argv.contains(" where ")) 
-        {
-            throw new Exception("error in WHERE");
-        }
-    
-        argv = argv.replaceAll("\\s*=\\s*", "=");
-        argv = argv.replaceAll("\\s*,\\s*", ",");
-       
-
-        String sqlLower = argv.toLowerCase();
-        int whereIndex = sqlLower.indexOf("where");
-        
-        if (whereIndex != -1) 
-        {
-            return argv.substring(whereIndex + 5).trim();
-        }
-        
-        return null;
     }
 }
