@@ -1,3 +1,4 @@
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main
@@ -5,16 +6,11 @@ public class Main
     public static void main(String[] args) throws Exception
     {
         jmycsql jmycsql = new jmycsql();
-        Scanner sc = new Scanner(System.in);
-        
-        // jmycsql.commandExec(sc.nextLine());
 
-        // System.out.println(jmycsql.data.get(0));
-
-        String sql1 = "UPDATE VALUES 'active'=true  where 'Name'='pety'";
-        String sql2 = "UPDATE VALUES 'active'=false, 'cost'=10.1 where 'id'=3";
+        jmycsql.commandExec("INSERT VALUES 'lastName'='Федоров'  ,  'cost'  =  null  , 'active'=true, 'id'=3, 'age'=40");
+        System.out.println(jmycsql.data.get(0));
         
-        System.out.println(jmycsql.WHERE(sql1));
+
     }
 
 }

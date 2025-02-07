@@ -52,7 +52,7 @@ public class jmycsql extends jmycsqlDataFoo
     }
 
 
-    private void UPDATE(String argv) // изменение элемента в коллекции
+    private void UPDATE(String argv) throws Exception // изменение элемента в коллекции
     {
         //TODO
     }
@@ -70,16 +70,16 @@ public class jmycsql extends jmycsqlDataFoo
     }
 
 
-    public Object WHERE(String argv) throws Exception
+    public String WHERE(String argv) throws Exception
     {
-        argv = argv.replaceAll("\\s*=\\s*", "=");
-        argv = argv.replaceAll("\\s*,\\s*", ",");
-
-        if (!argv.contains(" where '")) 
+        if (!argv.contains(" where ")) 
         {
             throw new Exception("error in WHERE");
         }
-        
+    
+        argv = argv.replaceAll("\\s*=\\s*", "=");
+        argv = argv.replaceAll("\\s*,\\s*", ",");
+       
 
         String sqlLower = argv.toLowerCase();
         int whereIndex = sqlLower.indexOf("where");
