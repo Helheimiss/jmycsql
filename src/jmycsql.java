@@ -69,4 +69,10 @@ public class jmycsql extends jmycsqlDataFoo
     {
         //TODO
     }
+
+
+    private void WHERE(String argv) //
+    {
+        //TODO
+    }
 }
