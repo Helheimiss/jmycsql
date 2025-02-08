@@ -5,11 +5,21 @@ public class Main
         jmycsql jmycsql = new jmycsql();
 
         // for tests
-        String cm = "INSERT VALUES 'lastName'    =    'Федоров' , 'id'=     3    ,   'age'=40, 'active'=true";
-        String cm2 = "UPDATE VALUES 'lastName'    =    'Федоров' , 'id'=     3    ,   where 'age'=40, 'active'=true";
-        jmycsql.commandExec(cm);
+        jmycsql.commandExec("INSERT VALUES 'lastName'    =    'Федоров' , 'id'=     1, 'cost'=3.3    ,   'age'=123, 'active'=false");
+        jmycsql.commandExec("INSERT VALUES 'lastName'  =    'pet' , 'id'   =  2    ,   'age'=33, 'active'=true");
+        jmycsql.commandExec("INSERT VALUES 'lastName'    =    'Федоров' , 'id'=     3  ,   'age'=40, 'active'=true");
+
+
+        jmycsql.printAllRowsInDataBase(jmycsql.data);
+
+
+        System.out.println("------");
+        String cm2 = "UPDATE VALUES 'lastName' = 'ff', 'id'=3, where 'age'=40, 'active'=true";
         jmycsql.commandExec(cm2);
-        // System.out.println(jmycsql.data.get(0));
+        System.out.println("------");
+
+        
+        jmycsql.printAllRowsInDataBase(jmycsql.data);
 
 
     }

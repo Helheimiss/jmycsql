@@ -79,29 +79,11 @@ public class jmycsqlDataFoo extends jmycsqlCommands
     }
 
 
-    protected void updateIfEquals(List<Map<String, Object>> data, Object oldValue, Object newValue, String field)
+    protected void printAllRowsInDataBase(List<Map<String,Object>> data)
     {
-        String value = null;
-
-        for (String f : fields) 
+        for (Map<String,Object> row : data)
         {
-            if (field.equals(f))
-            {
-                value = f;
-                break;
-            }            
-        }
-
-        for (Map<String, Object> row : data) 
-        {
-            // Получаем значение age из карты
-            Object fieldValue = row.get(value);
-
-            // Проверяем, не является ли ageValue null и равно ли оно oldValue
-            if (fieldValue != null && fieldValue.equals(oldValue)) 
-            {
-                row.put(value, newValue); // Обновляем на новое значение
-            }
+            System.out.println(row);
         }
     }
 
