@@ -82,8 +82,6 @@ public class jmycsql extends jmycsqlDataFoo
 
         argv = textTransform(argv);
 
-        System.out.println(getWhereFromString(argv)); // test
-
         
         return getWhereFromString(argv);
     }

@@ -20,7 +20,6 @@ public class jmycsqlDataFoo extends jmycsqlCommands
 
     protected String getWhereFromString(String input)
     {
-        // field += "=";
         int startAt = input.indexOf("where ");
         int endTo = startAt;
 
@@ -48,7 +47,6 @@ public class jmycsqlDataFoo extends jmycsqlCommands
 
     protected Object getObjectFromText(String input, String field)
     {
-        // field += "=";
         int startAt = input.indexOf(field);
         int endTo = startAt;
 
