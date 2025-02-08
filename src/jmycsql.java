@@ -73,7 +73,7 @@ public class jmycsql extends jmycsqlDataFoo
     }
 
 
-    private void WHERE(String argv) throws Exception //
+    private String WHERE(String argv) throws Exception //
     {
         if (!argv.contains(" where ") || argv.contains("UPDATE VALUES where"))
         {
@@ -82,8 +82,9 @@ public class jmycsql extends jmycsqlDataFoo
 
         argv = textTransform(argv);
 
-        System.out.println(getWhereFromString(argv));
+        System.out.println(getWhereFromString(argv)); // test
 
-        // getWhereFromString(argv);
+        
+        return getWhereFromString(argv);
     }
 }
