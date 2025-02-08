@@ -88,6 +88,17 @@ public class jmycsqlDataFoo extends jmycsqlCommands
     }
 
 
+    protected void updateRow(List<Map<String,Object>> data, String[] requiredFields)
+    {
+        //TODO
+        for (int i = 0; i < data.size(); i++) {
+            Map<String, Object> row = data.get(i);
+            System.out.println(row);
+        }
+
+    }
+
+
     protected Map<String, Object> createRow(Object id, Object lastName, Object age, Object cost, Object active) 
     {
        Map<String, Object> row = new HashMap<>();

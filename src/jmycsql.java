@@ -41,6 +41,9 @@ public class jmycsql extends jmycsqlDataFoo
         Object age = getObjectFromText(argv, fields[2]);
         Object cost = getObjectFromText(argv, fields[3]);
         Object active = getObjectFromText(argv, fields[4]);
+        
+
+        System.out.println("[+] log (INSERT): id=" + id + " lastName=" + lastName + " age=" + age + " cost=" + cost + " active=" + active);
 
 
         data.add(createRow
@@ -61,18 +64,18 @@ public class jmycsql extends jmycsqlDataFoo
         
 
         //INPROCESS
-    }
+        }
 
 
-    private void DELETE(String argv) throws Exception // удаление элемента из коллекции
-    {
-        //TODO
-    }
+        private void DELETE(String argv) throws Exception // удаление элемента из коллекции
+        {
+            //TODO
+        }
 
 
-    private void SELECT(String argv) throws Exception // поиск элементов в коллекции
-    {
-        //TODO
+        private void SELECT(String argv) throws Exception // поиск элементов в коллекции
+        {
+            //TODO
     }
 
 
