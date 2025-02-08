@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class jmycsqlDataFoo extends jmycsqlCommands
@@ -75,6 +76,33 @@ public class jmycsqlDataFoo extends jmycsqlCommands
 
 
         return newInputText.replace("=", "");
+    }
+
+
+    protected void updateIfEquals(List<Map<String, Object>> data, Object oldValue, Object newValue, String field)
+    {
+        String value = null;
+
+        for (String f : fields) 
+        {
+            if (field.equals(f))
+            {
+                value = f;
+                break;
+            }            
+        }
+
+        for (Map<String, Object> row : data) 
+        {
+            // Получаем значение age из карты
+            Object fieldValue = row.get(value);
+
+            // Проверяем, не является ли ageValue null и равно ли оно oldValue
+            if (fieldValue != null && fieldValue.equals(oldValue)) 
+            {
+                row.put(value, newValue); // Обновляем на новое значение
+            }
+        }
     }
 
 

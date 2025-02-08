@@ -9,7 +9,7 @@ public class Main
         String cm2 = "UPDATE VALUES 'lastName'    =    'Федоров' , 'id'=     3    ,   where 'age'=40, 'active'=true";
         jmycsql.commandExec(cm);
         jmycsql.commandExec(cm2);
-        System.out.println(jmycsql.data.get(0));
+        // System.out.println(jmycsql.data.get(0));
 
 
     }
