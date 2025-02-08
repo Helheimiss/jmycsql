@@ -27,13 +27,13 @@ public class jmycsql extends jmycsqlDataFoo
         }
         else
         {
-            throw new Exception("error in commandExec");
+            throw new Exception("error in commandExec{ INSERT_VALUES, UPDATE_VALUES, SELECT_WHERE, DELETE_WHERE } not found command");
         }
 
     }
 
 
-    private void INSERT(String argv) // вставка элемента в коллекцию
+    private void INSERT(String argv) throws Exception // вставка элемента в коллекцию
     {
         argv = textTransform(argv);
         Object id = getObjectFromText(argv, fields[0]);
@@ -41,6 +41,7 @@ public class jmycsql extends jmycsqlDataFoo
         Object age = getObjectFromText(argv, fields[2]);
         Object cost = getObjectFromText(argv, fields[3]);
         Object active = getObjectFromText(argv, fields[4]);
+
 
         data.add(createRow
         (
@@ -55,6 +56,7 @@ public class jmycsql extends jmycsqlDataFoo
 
     private void UPDATE(String argv) throws Exception // изменение элемента в коллекции
     {
+        WHERE(argv);
         //TODO
     }
 
@@ -73,9 +75,15 @@ public class jmycsql extends jmycsqlDataFoo
 
     private void WHERE(String argv) throws Exception //
     {
-        if (!argv.contains(" where "))
+        if (!argv.contains(" where ") || argv.contains("UPDATE VALUES where"))
         {
-            throw new Exception("error in WHERE{ UPDATE, DELETE, SELECT }");
+            throw new Exception("error in WHERE { UPDATE, DELETE, SELECT } incorrect use of where");
         }
+
+        argv = textTransform(argv);
+
+        System.out.println(getWhereFromString(argv));
+
+        // getWhereFromString(argv);
     }
 }

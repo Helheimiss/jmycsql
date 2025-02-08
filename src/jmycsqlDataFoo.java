@@ -1,3 +1,4 @@
+import java.io.StringReader;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,6 +16,34 @@ public class jmycsqlDataFoo extends jmycsqlCommands
         
 
         return output;
+    }
+
+
+    protected String getWhereFromString(String input)
+    {
+        // field += "=";
+        int startAt = input.indexOf("where ");
+        int endTo = startAt;
+
+        
+        int i = startAt;
+        input += '\0';
+        try 
+        {            
+            while (input.toCharArray()[i] != '\0')
+            {
+                endTo++;
+                i++;
+            }
+        }
+        catch (Exception e) 
+        {
+            return null;
+        }
+
+        String newInputText = input.substring(startAt, endTo);
+
+        return newInputText;
     }
 
 
