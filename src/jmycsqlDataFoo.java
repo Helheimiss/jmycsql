@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class jmycsqlDataFoo extends jmycsqlCommands
 {
-    String[] fields = {"id", "lastName", "age", "cost", "active"};
+    protected String[] fields = {"id", "lastName", "age", "cost", "active"};
 
     protected String textTransform(String input)
     {

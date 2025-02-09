@@ -60,7 +60,17 @@ public class jmycsql extends jmycsqlDataFoo
     private void UPDATE(String argv) throws Exception // изменение элемента в коллекции
     {
         argv = textTransform(argv);
-        System.out.println("[+] log (where): " + WHERE(argv)); // for test
+        String whereSave = WHERE(argv);
+
+        if (whereSave.contains(", "))
+        {
+            throw new Exception("error in UPDATE { WHERE } incorrect use of where contnainc ','");
+            
+        }
+
+        
+
+        System.out.println("[+] log (where): " + whereSave); // for test
         
 
         //INPROCESS
