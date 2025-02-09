@@ -14,7 +14,7 @@ public class Main
 
 
         System.out.println("------");
-        String cm2 = "UPDATE VALUES 'lastName' = 'ff', 'id'=3, where 'age'=40 OR 'active'=true";
+        String cm2 = "UPDATE VALUES 'lastName' = 'ff', 'id'=3, where 'age'=40";
         jmycsql.commandExec(cm2);
         System.out.println("------");
 

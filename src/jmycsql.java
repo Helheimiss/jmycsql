@@ -68,24 +68,24 @@ public class jmycsql extends jmycsqlDataFoo
             
         }
 
-        
+        updateRow(data, whereSave.replace("where ", ""));
 
         System.out.println("[+] log (where): " + whereSave); // for test
         
 
         //INPROCESS
-        }
+    }
 
 
-        private void DELETE(String argv) throws Exception // удаление элемента из коллекции
-        {
-            //TODO
-        }
+    private void DELETE(String argv) throws Exception // удаление элемента из коллекции
+    {
+        //TODO
+    }
 
 
-        private void SELECT(String argv) throws Exception // поиск элементов в коллекции
-        {
-            //TODO
+    private void SELECT(String argv) throws Exception // поиск элементов в коллекции
+    {
+        //TODO
     }
 
 

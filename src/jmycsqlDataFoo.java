@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -88,14 +89,9 @@ public class jmycsqlDataFoo extends jmycsqlCommands
     }
 
 
-    protected void updateRow(List<Map<String,Object>> data, String[] requiredFields)
+    protected void updateRow(List<Map<String,Object>> data, String requiredField)
     {
         //TODO
-        for (int i = 0; i < data.size(); i++) {
-            Map<String, Object> row = data.get(i);
-            System.out.println(row);
-        }
-
     }
 
 
